@@ -1,0 +1,82 @@
+<div class="container" ng-controller="calculatorCtrl">
+    <h1>Calculator</h1>
+    <div class="calculator">
+        <input type="text" id="expression" ng-model="expression" class="display">
+        <button ng-click="clear()" class="button operator">C</button>
+        <button ng-click="back()" class="button operator">Back</button>
+        <button ng-click="add('/')" class="button operator">/</button>
+        <button ng-click="add('7')" class="button">7</button>
+        <button ng-click="add('8')" class="button">8</button>
+        <button ng-click="add('9')" class="button">9</button>
+        <button ng-click="add('*')" class="button operator">*</button>
+        <button ng-click="add('4')" class="button">4</button>
+        <button ng-click="add('5')" class="button">5</button>
+        <button ng-click="add('6')" class="button">6</button>
+        <button ng-click="add('-')" class="button operator">-</button>
+        <button ng-click="add('1')" class="button">1</button>
+        <button ng-click="add('2')" class="button">2</button>
+        <button ng-click="add('3')" class="button">3</button>
+        <button ng-click="add('+')" class="button operator">+</button>
+        <button ng-click="add('0')" class="button">0</button>
+        <button ng-click="add('.')" class="button">.</button>
+        <button ng-click="evaluate()" class="button operator">=</button>
+    </div>
+</div>
+
+<style>
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    color:black;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #eacece;
+    border-radius: 5px;
+    
+}
+
+.display {
+    grid-column: 1 / span 4;
+    height: 50px;
+    background-color: #f7f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    color:black;
+}
+
+.button:hover {
+    background-color: #e1a6a6;
+}
+
+.button.operator {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.button.operator:hover {
+    background-color: #e6e6e6;
+}
+</style>

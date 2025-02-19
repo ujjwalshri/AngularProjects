@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myMath">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MainCtrl">
+
+
+
+
+    <div class="navbar">
+        <a href="#!/home" >Home</a>
+        <a href="#!/calculator" ng-hide="loggedOut">Calculator</a>
+        <a href="#!/length" ng-hide="loggedOut">Length Conversion</a>
+        <a href="#!/login" ng-show="loggedOut"> login</a>
+        <a href="#!/baseConverter" ng-hide="loggedOut"> baseConverter</a>
+        <button id="logout-button" ng-click="logoutUser()" ng-hide="loggedOut">logout</button>
+    </div>
+
+
+
+    <!-- this is the Home page hero image and text -->
+    <div ng-view >
+    </div>
+
+</body>
+</html>

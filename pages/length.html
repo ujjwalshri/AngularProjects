@@ -1,0 +1,62 @@
+
+<div class="converter" ng-controller="lengthCtrl">
+    <h1>Length Converter</h1>
+    <div>
+        <input type="number" id="inputValue" placeholder="Enter value" ng-model="value">
+        <select id="inputUnit" ng-model="unit">
+            <option value="">Select Input Unit</option>
+            <option ng-repeat="(key, val) in conversionRates" value="{{key}}">{{key}}</option>
+        </select>
+    </div>
+    <div>
+        <select id="outputUnit" ng-model="outputUnit">
+            <option value="">Select Output Unit</option>
+            <option ng-repeat="(key, val) in conversionRates" value="{{key}}">{{key}}</option>
+        </select>
+        <h1>Converted Output: {{ convertedOutput }}</h1>
+    </div>
+    <button ng-click="convert()">Convert</button>
+    <div class="result" id="result"></div>
+</div>
+
+<style>
+
+.converter {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 100px;
+  
+}
+.converter h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.converter select, .converter input {
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.converter button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.converter button:hover {
+    background-color: #0056b3;
+}
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+</style>

@@ -1,0 +1,134 @@
+/* Navbar Container */
+.navbar {
+    background-color: #f8f9fa; /* Light background */
+    border-bottom: 1px solid #e9ecef; /* Subtle border */
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    display: flex; /* Flex layout for alignment */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Vertical centering */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+/* Navbar Brand/Logo */
+
+
+/* Navbar Links */
+.navbar a, .navbar button {
+    color: rgb(29, 24, 24);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border: 1px solid #343a40;
+    border-radius: 8px;
+}
+
+.navbar a:hover, .navbar button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* Responsive Design - Collapse Links on Small Screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center the content */
+    }
+
+    .navbar-links {
+        flex-direction: column; /* Vertical links */
+        margin-top: 1rem; /* Space after logo */
+    }
+}
+/* Form Container */
+form {
+    max-width: 500px; /* Limit form width */
+    margin: 2rem auto; /* Center the form */
+    padding: 2rem; /* Add padding for spacing */
+    background: #f8f9fa; /* Light background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Form Group (Wrapper for Each Field) */
+.form-group {
+    margin-bottom: 1.5rem; /* Space between fields */
+}
+
+/* Labels */
+.form-group label {
+    display: block; /* Make label block for better alignment */
+    margin-bottom: 0.5rem; /* Space below label */
+    font-weight: bold; /* Emphasize labels */
+    color: #495057; /* Dark grey for contrast */
+}
+
+/* Input, Select, Textarea Styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Full-width input */
+    padding: 0.75rem; /* Comfortable padding */
+    font-size: 1rem; /* Readable font size */
+    border: 1px solid #ced4da; /* Light grey border */
+    border-radius: 8px; /* Rounded input corners */
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease; /* Smooth focus effect */
+}
+
+/* Input Focus Effect */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Glow effect */
+}
+
+/* Textarea Specific Styling */
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px; /* Minimum height for textarea */
+}
+
+/* Submit Button */
+button {
+    display: inline-block; /* Allow margin/padding */
+    width: 100%; /* Full-width button */
+    padding: 0.75rem; /* Consistent padding */
+    font-size: 1rem; /* Match input font size */
+    color: white; /* White text */
+    background: #007bff; /* Primary blue color */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show pointer on hover */
+    transition: background 0.3s ease; /* Smooth hover transition */
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 1.5rem; /* Reduce padding for small screens */
+    }
+}
+
+
+#logout-button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 100px;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+<form ng-controller="SignupCtrl">
+    <div class="form-group">
+        <label for="exampleInputEmail1">username</label>
+        <input type="text" class="form-control" id="username-input" aria-describedby="emailHelp" placeholder="Enter username" ng-model="username">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name-input" aria-describedby="emailHelp" placeholder="Enter your name" ng-model="name">
+        <small id="name-help" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="password">
+    </div>
+    <div class="form-group">
+        already a user? <a href="#!/login">Login</a>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="handleSignup()">Submit</button>
+</form>
