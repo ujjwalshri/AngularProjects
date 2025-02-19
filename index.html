@@ -6,6 +6,7 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,14 +21,24 @@
         <a href="#!/length" ng-hide="loggedOut">Length Conversion</a>
         <a href="#!/login" ng-show="loggedOut"> login</a>
         <a href="#!/baseConverter" ng-hide="loggedOut"> baseConverter</a>
+        <a href="#!/charts" ng-hide="loggedOut"> charts </a>
         <button id="logout-button" ng-click="logoutUser()" ng-hide="loggedOut">logout</button>
     </div>
 
 
 
     <!-- this is the Home page hero image and text -->
-    <div ng-view >
+    <div ng-view id="view" >
     </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Math Companion | All Rights Reserved</p>
+        <p>
+            <a href="#" class="footer-link">Privacy Policy</a> |
+            <a href="#" class="footer-link">Terms of Service</a> |
+            <a href="#" class="footer-link">Contact Us</a>
+        </p>
+    </footer>
 
 </body>
 </html>

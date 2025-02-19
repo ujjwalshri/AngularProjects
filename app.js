@@ -28,6 +28,10 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'pages/baseConverter.html',
         controller: 'MainCtrl',
     })
+    .when('/charts',{
+        templateUrl: 'pages/charts.html',
+        controller: 'MainCtrl',
+    })
     .otherwise({
         redirectTo: '/'
     });
@@ -223,7 +227,7 @@ app.controller('lengthCtrl', function($scope) {
         console.log($scope.value);
         console.log(inputUnit);
         console.log(outputUnit);
-        if (!$scope.value || !$scope.conversionRates[inputUnit] || !$scope.conversionRates[outputUnit]) {
+        if (!$scope.value || $scope.value < 0 || !$scope.conversionRates[inputUnit] || !$scope.conversionRates[outputUnit]) {
             alert('Invalid unit or value. Use meters, kilometers, miles, inches, feet, centimeters, or millimeters.');
             return;
         }
@@ -272,5 +276,52 @@ app.controller('baseCtrl', function($scope) {
         const decimalNumber = parseInt(inputNumber, inputBase); // converting any number to original decimal number first 
        
         $scope.convertedOutput = decimalNumber.toString(outputBase);//converting that number to the desired base
+    };
+});
+
+
+app.controller('chartCtrl', function($scope) {
+    var chart;
+    $scope.xInput = '';
+    $scope.yInput = '';
+    $scope.chartType = '';
+
+    $scope.plotChart = ()=>{
+        var xValues = $scope.xInput.split(',').map(item=> item.trim());
+        var yValues = $scope.yInput.split(',').map(item=> parseFloat(item.trim()));
+        console.log(xValues);
+        console.log(yValues);
+        var chartType = $scope.chartType;
+        console.log(chartType);
+        if(xValues.length !== yValues.length || yValues.some(isNaN)){
+            alert("error");
+            return;
+        }
+
+        const check =  document.getElementById('chartCanvas');
+        var ctx = document.getElementById('chartCanvas').getContext("2d");
+
+        if(chart){
+            chart.destroy();
+        }
+        chart = new Chart( ctx , {
+            type: chartType, // Change to 'bar', 'scatter', etc. if needed
+            data: {
+                labels: xValues,
+                datasets: [{
+                    label: "User Data",
+                    data: yValues,
+                    borderColor: "blue",
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { title: { display: true, text: "X Values" } },
+                    y: { title: { display: true, text: "Y Values" } }
+                }
+            }
+        });
     };
 });

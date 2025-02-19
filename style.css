@@ -132,3 +132,23 @@ button:hover {
     font-size: 1rem;
     cursor: pointer;
 }
+
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 20px;
+}
+.footer-link {
+    color: #f8f8f8;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+#view{
+    padding: 50px;
+}
