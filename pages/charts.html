@@ -1,8 +1,9 @@
 <div ng-controller="chartCtrl">
-    <h1>see bar graphs of your data points</h1>
+    <h1>see charts of your data points</h1>
     <input type="text" placeholder="enter the x coordinates in comma spaced numbers" ng-model="xInput">
     <input type="text" placeholder="enter the y coordinates in comma spaced numbers" ng-model="yInput">
     <div class="chart-options">
+        <label for="chartType">Select your chart type</label>
         <select id="chartType" ng-model="chartType" >
             <option value="bar">Bar</option>
             <option value="line">Line</option>
